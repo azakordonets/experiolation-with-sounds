@@ -1,7 +1,6 @@
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
-import {useEffect, useRef, useState} from "react";
-const initSound = "";
+import { useState } from "react";
 import UIfx from 'uifx'
 
 const samples = [
