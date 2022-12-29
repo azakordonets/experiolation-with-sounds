@@ -3,12 +3,11 @@ import 'react-simple-keyboard/build/css/index.css';
 import { useState } from "react";
 import UIfx from 'uifx'
 
-const samples = [
-    {
-        file: "resources/45.m4a",
-        key: "0",
+const samples = [{
+    file: "resources/45.m4a",
+    key: "0",
 
-    },
+},
 
     {
         file: "resources/36.m4a",
@@ -69,10 +68,20 @@ const samples = [
         key: "a",
 
     },
+    {
+        file: "resources/01.m4a",
+        key: "A",
+
+    },
 
     {
         file: "resources/02.m4a",
         key: "b",
+
+    },
+    {
+        file: "resources/02.m4a",
+        key: "B",
 
     },
 
@@ -81,10 +90,20 @@ const samples = [
         key: "c",
 
     },
+    {
+        file: "resources/03.m4a",
+        key: "C",
+
+    },
 
     {
         file: "resources/04.m4a",
         key: "d",
+
+    },
+    {
+        file: "resources/04.m4a",
+        key: "D",
 
     },
 
@@ -93,10 +112,20 @@ const samples = [
         key: "e",
 
     },
+    {
+        file: "resources/05.m4a",
+        key: "E",
+
+    },
 
     {
         file: "resources/06.m4a",
         key: "f",
+
+    },
+    {
+        file: "resources/06.m4a",
+        key: "F",
 
     },
 
@@ -105,10 +134,20 @@ const samples = [
         key: "g",
 
     },
+    {
+        file: "resources/07.m4a",
+        key: "G",
+
+    },
 
     {
         file: "resources/08.m4a",
         key: "h",
+
+    },
+    {
+        file: "resources/08.m4a",
+        key: "H",
 
     },
 
@@ -117,10 +156,20 @@ const samples = [
         key: "i",
 
     },
+    {
+        file: "resources/09.m4a",
+        key: "I",
+
+    },
 
     {
         file: "resources/10.m4a",
         key: "j",
+
+    },
+    {
+        file: "resources/10.m4a",
+        key: "J",
 
     },
 
@@ -129,10 +178,20 @@ const samples = [
         key: "k",
 
     },
+    {
+        file: "resources/11.m4a",
+        key: "K",
+
+    },
 
     {
         file: "resources/12.m4a",
         key: "l",
+
+    },
+    {
+        file: "resources/12.m4a",
+        key: "L",
 
     },
 
@@ -141,10 +200,20 @@ const samples = [
         key: "m",
 
     },
+    {
+        file: "resources/13.m4a",
+        key: "M",
+
+    },
 
     {
         file: "resources/14.m4a",
         key: "n",
+
+    },
+    {
+        file: "resources/14.m4a",
+        key: "N",
 
     },
 
@@ -153,10 +222,20 @@ const samples = [
         key: "o",
 
     },
+    {
+        file: "resources/15.m4a",
+        key: "O",
+
+    },
 
     {
         file: "resources/16.m4a",
         key: "p",
+
+    },
+    {
+        file: "resources/16.m4a",
+        key: "P",
 
     },
 
@@ -165,10 +244,20 @@ const samples = [
         key: "q",
 
     },
+    {
+        file: "resources/17.m4a",
+        key: "Q",
+
+    },
 
     {
         file: "resources/18.m4a",
         key: "r",
+
+    },
+    {
+        file: "resources/18.m4a",
+        key: "R",
 
     },
 
@@ -177,10 +266,20 @@ const samples = [
         key: "s",
 
     },
+    {
+        file: "resources/19.m4a",
+        key: "S",
+
+    },
 
     {
         file: "resources/20.m4a",
         key: "t",
+
+    },
+    {
+        file: "resources/20.m4a",
+        key: "T",
 
     },
 
@@ -189,10 +288,20 @@ const samples = [
         key: "u",
 
     },
+    {
+        file: "resources/21.m4a",
+        key: "U",
+
+    },
 
     {
         file: "resources/22.m4a",
         key: "v",
+
+    },
+    {
+        file: "resources/22.m4a",
+        key: "V",
 
     },
 
@@ -201,10 +310,20 @@ const samples = [
         key: "w",
 
     },
+    {
+        file: "resources/23.m4a",
+        key: "W",
+
+    },
 
     {
         file: "resources/24.m4a",
         key: "x",
+
+    },
+    {
+        file: "resources/24.m4a",
+        key: "X",
 
     },
 
@@ -213,10 +332,20 @@ const samples = [
         key: "y",
 
     },
+    {
+        file: "resources/25.m4a",
+        key: "Y",
+
+    },
 
     {
         file: "resources/26.m4a",
         key: "z",
+
+    },
+    {
+        file: "resources/26.m4a",
+        key: "Z",
 
     },
 
@@ -273,6 +402,11 @@ const samples = [
         key: "shift",
 
     },
+    {
+        file: "resources/35.m4a",
+        key: "SHIFT",
+
+    },
 
     {
         file: "resources/46.m4a",
@@ -281,9 +415,9 @@ const samples = [
     },
     {
         file: "resources/46.m4a",
-        key: "bksp",
+        key: "ENTER",
 
-    }
+    },
 ];
 const PianoPage = () => {
     const [text, setText] = useState('');
