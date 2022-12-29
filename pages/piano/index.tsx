@@ -3,421 +3,777 @@ import 'react-simple-keyboard/build/css/index.css';
 import { useState } from "react";
 import UIfx from 'uifx'
 
-const samples = [{
-    file: "resources/45.m4a",
-    key: "0",
+const samples = [
+    {
+        file: "resources/10.m4a",
+        key: "0",
 
-},
+    },
 
     {
-        file: "resources/36.m4a",
+        file: "resources/01.m4a",
         key: "1",
 
     },
 
     {
-        file: "resources/37.m4a",
+        file: "resources/02.m4a",
         key: "2",
 
     },
 
     {
-        file: "resources/38.m4a",
+        file: "resources/03.m4a",
         key: "3",
 
     },
 
     {
-        file: "resources/39.m4a",
+        file: "resources/04.m4a",
         key: "4",
 
     },
 
     {
-        file: "resources/40.m4a",
+        file: "resources/05.m4a",
         key: "5",
 
     },
 
     {
-        file: "resources/41.m4a",
+        file: "resources/06.m4a",
         key: "6",
 
     },
 
     {
-        file: "resources/42.m4a",
+        file: "resources/07.m4a",
         key: "7",
 
     },
 
     {
-        file: "resources/43.m4a",
+        file: "resources/08.m4a",
         key: "8",
 
     },
 
     {
-        file: "resources/44.m4a",
+        file: "resources/09.m4a",
         key: "9",
 
     },
 
     {
-        file: "resources/01.m4a",
+        file: "resources/english/11.m4a",
         key: "a",
 
     },
     {
-        file: "resources/01.m4a",
+        file: "resources/english/11.m4a",
         key: "A",
 
     },
 
     {
-        file: "resources/02.m4a",
+        file: "resources/english/12.m4a",
         key: "b",
 
     },
     {
-        file: "resources/02.m4a",
+        file: "resources/english/12.m4a",
         key: "B",
 
     },
 
     {
-        file: "resources/03.m4a",
+        file: "resources/english/13.m4a",
         key: "c",
 
     },
     {
-        file: "resources/03.m4a",
+        file: "resources/english/13.m4a",
         key: "C",
 
     },
 
     {
-        file: "resources/04.m4a",
+        file: "resources/english/14.m4a",
         key: "d",
 
     },
     {
-        file: "resources/04.m4a",
+        file: "resources/english/14.m4a",
         key: "D",
 
     },
 
     {
-        file: "resources/05.m4a",
+        file: "resources/english/15.m4a",
         key: "e",
 
     },
     {
-        file: "resources/05.m4a",
+        file: "resources/english/15.m4a",
         key: "E",
 
     },
 
     {
-        file: "resources/06.m4a",
+        file: "resources/english/16.m4a",
         key: "f",
 
     },
     {
-        file: "resources/06.m4a",
+        file: "resources/english/16.m4a",
         key: "F",
 
     },
 
     {
-        file: "resources/07.m4a",
+        file: "resources/english/17.m4a",
         key: "g",
 
     },
     {
-        file: "resources/07.m4a",
+        file: "resources/english/17.m4a",
         key: "G",
 
     },
 
     {
-        file: "resources/08.m4a",
+        file: "resources/english/18.m4a",
         key: "h",
 
     },
     {
-        file: "resources/08.m4a",
+        file: "resources/english/18.m4a",
         key: "H",
 
     },
 
     {
-        file: "resources/09.m4a",
+        file: "resources/english/19.m4a",
         key: "i",
 
     },
     {
-        file: "resources/09.m4a",
+        file: "resources/english/19.m4a",
         key: "I",
 
     },
 
     {
-        file: "resources/10.m4a",
+        file: "resources/english/20.m4a",
         key: "j",
 
     },
     {
-        file: "resources/10.m4a",
+        file: "resources/english/20.m4a",
         key: "J",
 
     },
 
     {
-        file: "resources/11.m4a",
+        file: "resources/english/21.m4a",
         key: "k",
 
     },
     {
-        file: "resources/11.m4a",
+        file: "resources/english/21.m4a",
         key: "K",
 
     },
 
     {
-        file: "resources/12.m4a",
+        file: "resources/english/22.m4a",
         key: "l",
 
     },
     {
-        file: "resources/12.m4a",
+        file: "resources/english/22.m4a",
         key: "L",
 
     },
 
     {
-        file: "resources/13.m4a",
+        file: "resources/english/23.m4a",
         key: "m",
 
     },
     {
-        file: "resources/13.m4a",
+        file: "resources/english/23.m4a",
         key: "M",
 
     },
 
     {
-        file: "resources/14.m4a",
+        file: "resources/english/24.m4a",
         key: "n",
 
     },
     {
-        file: "resources/14.m4a",
+        file: "resources/english/24.m4a",
         key: "N",
 
     },
 
     {
-        file: "resources/15.m4a",
+        file: "resources/english/25.m4a",
         key: "o",
 
     },
     {
-        file: "resources/15.m4a",
+        file: "resources/english/25.m4a",
         key: "O",
 
     },
 
     {
-        file: "resources/16.m4a",
+        file: "resources/english/26.m4a",
         key: "p",
 
     },
     {
-        file: "resources/16.m4a",
+        file: "resources/english/26.m4a",
         key: "P",
 
     },
 
     {
-        file: "resources/17.m4a",
+        file: "resources/english/27.m4a",
         key: "q",
 
     },
     {
-        file: "resources/17.m4a",
+        file: "resources/english/27.m4a",
         key: "Q",
 
     },
 
     {
-        file: "resources/18.m4a",
+        file: "resources/english/28.m4a",
         key: "r",
 
     },
     {
-        file: "resources/18.m4a",
+        file: "resources/english/28.m4a",
         key: "R",
 
     },
 
     {
-        file: "resources/19.m4a",
+        file: "resources/english/29.m4a",
         key: "s",
 
     },
     {
-        file: "resources/19.m4a",
+        file: "resources/english/29.m4a",
         key: "S",
 
     },
 
     {
-        file: "resources/20.m4a",
+        file: "resources/english/30.m4a",
         key: "t",
 
     },
     {
-        file: "resources/20.m4a",
+        file: "resources/english/30.m4a",
         key: "T",
 
     },
 
     {
-        file: "resources/21.m4a",
+        file: "resources/english/31.m4a",
         key: "u",
 
     },
     {
-        file: "resources/21.m4a",
+        file: "resources/english/31.m4a",
         key: "U",
 
     },
 
     {
-        file: "resources/22.m4a",
+        file: "resources/english/32.m4a",
         key: "v",
 
     },
     {
-        file: "resources/22.m4a",
+        file: "resources/english/32.m4a",
         key: "V",
 
     },
 
     {
-        file: "resources/23.m4a",
+        file: "resources/english/33.m4a",
         key: "w",
 
     },
     {
-        file: "resources/23.m4a",
+        file: "resources/english/33.m4a",
         key: "W",
 
     },
 
     {
-        file: "resources/24.m4a",
+        file: "resources/english/34.m4a",
         key: "x",
 
     },
     {
-        file: "resources/24.m4a",
+        file: "resources/english/34.m4a",
         key: "X",
 
     },
 
     {
-        file: "resources/25.m4a",
+        file: "resources/english/35.m4a",
         key: "y",
 
     },
     {
-        file: "resources/25.m4a",
+        file: "resources/english/35.m4a",
         key: "Y",
 
     },
 
     {
-        file: "resources/26.m4a",
+        file: "resources/english/36.m4a",
         key: "z",
 
     },
     {
-        file: "resources/26.m4a",
+        file: "resources/english/36.m4a",
         key: "Z",
 
     },
 
     {
-        file: "resources/27.m4a",
+        file: "resources/ukrainian/12.m4a",
+        key: "б",
+
+    },
+    {
+        file: "resources/ukrainian/12.m4a",
+        key: "Б",
+
+    },
+
+    {
+        file: "resources/ukrainian/13.m4a",
+        key: "в",
+
+    },
+    {
+        file: "resources/ukrainian/13.m4a",
+        key: "В",
+
+    },
+
+    {
+        file: "resources/ukrainian/14.m4a",
+        key: "г",
+
+    },
+    {
+        file: "resources/ukrainian/14.m4a",
+        key: "Г",
+
+    },
+
+    {
+        file: "resources/ukrainian/15.m4a",
+        key: "ґ",
+
+    },
+    {
+        file: "resources/ukrainian/15.m4a",
+        key: "Ґ",
+
+    },
+
+    {
+        file: "resources/ukrainian/16.m4a",
+        key: "д",
+
+    },
+    {
+        file: "resources/ukrainian/16.m4a",
+        key: "Д",
+
+    },
+
+    {
+        file: "resources/ukrainian/17.m4a",
+        key: "е",
+
+    },
+    {
+        file: "resources/ukrainian/17.m4a",
+        key: "Е",
+
+    },
+
+    {
+        file: "resources/ukrainian/18.m4a",
+        key: "є",
+
+    },
+    {
+        file: "resources/ukrainian/18.m4a",
+        key: "Є",
+
+    },
+
+    {
+        file: "resources/ukrainian/19.m4a",
+        key: "ж",
+
+    },
+    {
+        file: "resources/ukrainian/19.m4a",
+        key: "Ж",
+
+    },
+
+    {
+        file: "resources/ukrainian/20.m4a",
+        key: "з",
+
+    },
+    {
+        file: "resources/ukrainian/20.m4a",
+        key: "З",
+
+    },
+
+    {
+        file: "resources/ukrainian/21.m4a",
+        key: "и",
+
+    },
+    {
+        file: "resources/ukrainian/21.m4a",
+        key: "И",
+
+    },
+
+    {
+        file: "resources/ukrainian/22.m4a",
+        key: "і",
+
+    },
+    {
+        file: "resources/ukrainian/22.m4a",
+        key: "І",
+
+    },
+
+    {
+        file: "resources/ukrainian/23.m4a",
+        key: "ї",
+
+    },
+    {
+        file: "resources/ukrainian/23.m4a",
+        key: "Ї",
+
+    },
+
+    {
+        file: "resources/ukrainian/24.m4a",
+        key: "й",
+
+    },
+    {
+        file: "resources/ukrainian/24.m4a",
+        key: "Й",
+
+    },
+
+    {
+        file: "resources/ukrainian/25.m4a",
+        key: "к",
+
+    },
+    {
+        file: "resources/ukrainian/25.m4a",
+        key: "К",
+
+    },
+
+    {
+        file: "resources/ukrainian/26.m4a",
+        key: "л",
+
+    },
+    {
+        file: "resources/ukrainian/26.m4a",
+        key: "Л",
+
+    },
+
+    {
+        file: "resources/ukrainian/27.m4a",
+        key: "м",
+
+    },
+    {
+        file: "resources/ukrainian/27.m4a",
+        key: "М",
+
+    },
+
+    {
+        file: "resources/ukrainian/28.m4a",
+        key: "н",
+
+    },
+    {
+        file: "resources/ukrainian/28.m4a",
+        key: "Н",
+
+    },
+
+    {
+        file: "resources/ukrainian/29.m4a",
+        key: "о",
+
+    },
+    {
+        file: "resources/ukrainian/29.m4a",
+        key: "О",
+
+    },
+
+    {
+        file: "resources/ukrainian/30.m4a",
+        key: "п",
+
+    },
+    {
+        file: "resources/ukrainian/30.m4a",
+        key: "П",
+
+    },
+
+    {
+        file: "resources/ukrainian/31.m4a",
+        key: "р",
+
+    },
+    {
+        file: "resources/ukrainian/31.m4a",
+        key: "Р",
+
+    },
+
+    {
+        file: "resources/ukrainian/32.m4a",
+        key: "с",
+
+    },
+    {
+        file: "resources/ukrainian/32.m4a",
+        key: "С",
+
+    },
+
+    {
+        file: "resources/ukrainian/33.m4a",
+        key: "т",
+
+    },
+    {
+        file: "resources/ukrainian/33.m4a",
+        key: "Т",
+
+    },
+
+    {
+        file: "resources/ukrainian/34.m4a",
+        key: "у",
+
+    },
+    {
+        file: "resources/ukrainian/34.m4a",
+        key: "У",
+
+    },
+
+    {
+        file: "resources/ukrainian/35.m4a",
+        key: "ф",
+
+    },
+    {
+        file: "resources/ukrainian/35.m4a",
+        key: "Ф",
+
+    },
+
+    {
+        file: "resources/ukrainian/36.m4a",
+        key: "х",
+
+    },
+    {
+        file: "resources/ukrainian/36.m4a",
+        key: "Х",
+
+    },
+
+    {
+        file: "resources/ukrainian/37.m4a",
+        key: "ц",
+
+    },
+    {
+        file: "resources/ukrainian/37.m4a",
+        key: "Ц",
+
+    },
+
+    {
+        file: "resources/ukrainian/38.m4a",
+        key: "ч",
+
+    },
+    {
+        file: "resources/ukrainian/38.m4a",
+        key: "Ч",
+
+    },
+
+    {
+        file: "resources/ukrainian/39.m4a",
+        key: "ш",
+
+    },
+    {
+        file: "resources/ukrainian/39.m4a",
+        key: "Ш",
+
+    },
+
+    {
+        file: "resources/ukrainian/40.m4a",
+        key: "щ",
+
+    },
+    {
+        file: "resources/ukrainian/40.m4a",
+        key: "Щ",
+
+    },
+
+    {
+        file: "resources/ukrainian/41.m4a",
+        key: "ь",
+
+    },
+    {
+        file: "resources/ukrainian/41.m4a",
+        key: "Ь",
+
+    },
+
+    {
+        file: "resources/ukrainian/42.m4a",
+        key: "ю",
+
+    },
+    {
+        file: "resources/ukrainian/42.m4a",
+        key: "Ю",
+
+    },
+
+    {
+        file: "resources/ukrainian/43.m4a",
+        key: "я",
+
+    },
+    {
+        file: "resources/ukrainian/43.m4a",
+        key: "Я",
+
+    },
+    {
+        file: "resources/37.m4a",
         key: "-",
 
     },
-
     {
-        file: "resources/28.m4a",
+        file: "resources/38.m4a",
         key: "=",
 
     },
-
     {
-        file: "resources/29.m4a",
+        file: "resources/39.m4a",
         key: ":",
 
     },
-
     {
-        file: "resources/30.m4a",
+        file: "resources/40.m4a",
         key: "'",
 
     },
 
     {
-        file: "resources/31.m4a",
+        file: "resources/41.m4a",
         key: "\\",
 
     },
 
     {
-        file: "resources/32.m4a",
+        file: "resources/42.m4a",
         key: ",",
 
     },
-
     {
-        file: "resources/33.m4a",
+        file: "resources/43.m4a",
         key: ".",
 
     },
-
     {
-        file: "resources/34.m4a",
+        file: "resources/44.m4a",
         key: "/",
 
     },
-
     {
-        file: "resources/35.m4a",
+        file: "resources/45.m4a",
         key: "shift",
 
     },
     {
-        file: "resources/35.m4a",
+        file: "resources/45.m4a",
         key: "SHIFT",
 
     },
-
     {
         file: "resources/46.m4a",
-        key: "enter",
+        key: "{",
 
     },
     {
-        file: "resources/46.m4a",
-        key: "ENTER",
+        file: "resources/47.m4a",
+        key: "}",
 
     },
+    {
+        file: "resources/48.m4a",
+        key: "[",
+
+    },
+    {
+        file: "resources/49.m4a",
+        key: "]",
+
+    },
+
 ];
 const PianoPage = () => {
     const [text, setText] = useState('');
